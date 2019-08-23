@@ -1,0 +1,28 @@
+{
+  "name": "hack",
+  "version": "1.0.0",
+  "description": "Hackathon frontend project",
+  "author": "VanishMax",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "start": "nuxt build && nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint-fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "nuxt": "2.8.1",
+    "@nuxtjs/eslint-config": "1.1.2",
+    "@nuxtjs/eslint-module": "1.0.0",
+    "@nuxtjs/tailwindcss": "1.1.2",
+    "cssnano": "4.1.10"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.2",
+    "eslint": "6.2.1",
+    "eslint-plugin-nuxt": "0.4.3",
+    "vue-eslint-parser": "^6.0.4"
+  }
+}
