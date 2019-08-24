@@ -77,6 +77,11 @@
           <p>Oops! Something went wrong while submitting the form :(</p>
         </div>
       </div>
+
+      <p>
+        Уже зарегистрированы?
+        <nuxt-link to="/signin">Войти</nuxt-link>
+      </p>
     </div>
   </div>
 </template>
