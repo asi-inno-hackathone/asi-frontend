@@ -5,12 +5,12 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s ∫ glass',
+    titleTemplate: '%s | UStart',
     htmlAttrs: { lang: 'en' },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Hackathon frontend project' },
+      { hid: 'description', name: 'description', content: 'UStart – мы помогаем стартаперам, предпринимателям, инвесторам и грантодателям найти друг друга' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },

@@ -5,7 +5,7 @@
 <script>
   export default {
     head: {
-      title: 'Sign in for UStart',
+      title: 'Log In',
     },
   };
 </script>

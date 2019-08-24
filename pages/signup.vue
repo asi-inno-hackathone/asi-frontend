@@ -86,7 +86,7 @@
 
   export default {
     head: {
-      title: 'Sign up for UStart',
+      title: 'Sign Up',
     },
     data() {
       return {
