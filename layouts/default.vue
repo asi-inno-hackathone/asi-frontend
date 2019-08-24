@@ -1,12 +1,14 @@
 <template>
   <div>
+    <Header />
     <nuxt />
   </div>
 </template>
 
-<style>
-html {
-  background-color: theme('colors.white');
-  font-family: theme('fontFamily.sans');
-}
-</style>
+<script>
+  import Header from "../components/default/header";
+
+  export default {
+    components: {Header},
+  };
+</script>

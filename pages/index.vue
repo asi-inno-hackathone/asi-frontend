@@ -1,13 +1,16 @@
 <template>
   <div>
-    <h1 class="text-gray-800 text-4xl text-center">
-      Hello, everybody
-    </h1>
+    <Banner />
   </div>
 </template>
 
 <script>
+  import Banner from "../components/home/banner";
+
   export default {
+    components: {
+      Banner,
+    },
     head: {
       title: 'Home',
       meta: [{ hid: 'description', name: 'description', content: 'Home page' }],
