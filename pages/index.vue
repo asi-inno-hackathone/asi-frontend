@@ -65,6 +65,9 @@
             </div>
           </div>
         </div>
+        <nuxt-link to="/investors" class="mt-4 button tab w-inline-block w-tab-link">
+          Больше инвесторов
+        </nuxt-link>
       </div>
     </div>
     <div class="section accent">
