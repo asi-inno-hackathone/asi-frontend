@@ -107,25 +107,40 @@
         <div class="section-title-group">
           <h2 class="section-heading centered">Как начать</h2>
           <div class="section-subheading center">
-            мы помогаем Стартаперам, предпренимателям,
+            мы помогаем Стартаперам, предпринимателям,
             <br />инвесторам и грантодателям
             <br /><strong>найти друг друга</strong>
           </div>
         </div>
-        <div data-duration-in="300" data-duration-out="100" class="tabs-wrapper w-tabs">
+        <div class="tabs-wrapper w-tabs">
           <div class="tab-menu w-tab-menu">
-            <a data-w-tab="Tab 1" class="button tab w-inline-block w-tab-link w--current">
-              <div>Я-предприниматель</div>
-            </a>
-            <a data-w-tab="Tab 2" class="button tab w-inline-block w-tab-link">
-              <div>Я- Стартапер</div>
-            </a>
-            <a data-w-tab="Tab 3" class="button tab w-inline-block w-tab-link">
-              <div>Я- Инверстор</div>
-            </a>
+            <button
+              @click="activeTab = 1"
+              :class="{'w--current' : activeTab === 1}"
+              type="button"
+              class="button tab w-inline-block w-tab-link"
+            >
+              <div>Я - предприниматель</div>
+            </button>
+            <button
+              @click="activeTab = 2"
+              :class="{'w--current' : activeTab === 2}"
+              type="button"
+              class="button tab w-inline-block w-tab-link"
+            >
+              <div>Я - Стартапер</div>
+            </button>
+            <button
+              @click="activeTab = 3"
+              :class="{'w--current' : activeTab === 3}"
+              type="button"
+              class="button tab w-inline-block w-tab-link"
+            >
+              <div>Я - Инвестор</div>
+            </button>
           </div>
           <div class="w-tab-content">
-            <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+            <div :style="{opacity: activeTab === 1 ? 1 : 0, transition: 'opacity 300ms ease 0s'}" :class="{'w--tab-active': activeTab === 1}" class="w-tab-pane">
               <div>
                 <img
                   src="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d617ddb5bf4d8649d22f513_%D0%B5%D1%81%D0%BB%D0%B8%20%D1%8F%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D1%82%D0%B5%D0%BB%D1%8C.png"
@@ -143,7 +158,7 @@
                 </p>
               </div>
             </div>
-            <div data-w-tab="Tab 2" class="w-tab-pane">
+            <div :style="{opacity: activeTab === 2 ? 1 : 0, transition: 'opacity 300ms ease 0s'}" :class="{'w--tab-active': activeTab === 2}" class="w-tab-pane">
               <div>
                 <img
                   src="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d617befe3123d02a44461ca_%D0%B5%D1%81%D0%BB%D0%B8%20%D1%8F%20%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B0%D0%BF%D0%B5%D1%80.png"
@@ -161,7 +176,7 @@
                 </p>
               </div>
             </div>
-            <div data-w-tab="Tab 3" class="w-tab-pane">
+            <div :style="{opacity: activeTab === 3 ? 1 : 0, transition: 'opacity 300ms ease 0s'}" :class="{'w--tab-active': activeTab === 3}" class="w-tab-pane">
               <div>
                 <img
                   src="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d617fb145d893875f51865e_%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202019-08-24%20%D0%B2%2021.18.19.png"
@@ -193,6 +208,11 @@
     head: {
       title: 'Home',
       meta: [{ hid: 'description', name: 'description', content: 'Home page' }],
+    },
+    data() {
+      return {
+        activeTab: 1,
+      };
     },
   };
 </script>
