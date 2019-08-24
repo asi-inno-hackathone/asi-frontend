@@ -199,7 +199,6 @@ p {
 .hero-section.centered {
   padding-top: 195px;
   padding-bottom: 195px;
-  border-bottom: 4px solid #69b9ff;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(46, 157, 255, 0.5)), to(rgba(46, 157, 255, 0.22))), url("https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d615c34ad30d3142f34021a_photo-1416359658663-73a3834895eb.jpg");
   background-image: linear-gradient(180deg, rgba(46, 157, 255, 0.5), rgba(46, 157, 255, 0.22)), url("https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d615c34ad30d3142f34021a_photo-1416359658663-73a3834895eb.jpg");
   background-position: 0% 0%, 50% 50%;
