@@ -17,6 +17,7 @@
     "@nuxtjs/eslint-module": "1.0.0",
     "@nuxtjs/now-builder": "^0.15.3",
     "@nuxtjs/tailwindcss": "1.1.2",
+    "bcryptjs": "^2.4.3",
     "cssnano": "4.1.10",
     "nuxt": "2.8.1"
   },

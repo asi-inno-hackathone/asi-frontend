@@ -14,8 +14,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap&subset=cyrillic' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Righteous&display=swap' },
     ],
   },
 
@@ -24,16 +22,13 @@ export default {
   */
   modules: [],
 
+  css: ['~/static/css/styles.css'],
   /*
   ** Load nuxt de-modules
   */
   devModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss',
   ],
-  tailwindcss: {
-    cssPath: '~/static/css/tailwind.css',
-  },
 
   /*
   ** Customize the progress bar color
@@ -44,27 +39,6 @@ export default {
   ** Build configuration
   */
   build: {
-    /*
-     ** PostCSS setup
-     */
-    postcss: {
-      // Add plugin names as key and arguments as value
-      // Disable a plugin by passing false as value
-      // plugins: {
-      //   cssnano: {
-      //     preset: 'default',
-      //     discardComments: { removeAll: true },
-      //     zIndex: false,
-      //   },
-      // },
-      // Change the postcss-preset-env settings
-      preset: {
-        autoprefixer: {
-          cascade: false,
-          grid: true,
-        },
-      },
-    },
 
     extractCSS: true,
 
