@@ -22,7 +22,7 @@ export default {
   */
   modules: [],
 
-  css: ['~/static/css/styles.css'],
+  css: ['~/static/css/styles.css', '~/static/css/home.css'],
   /*
   ** Load nuxt de-modules
   */

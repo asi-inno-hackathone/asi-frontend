@@ -40,13 +40,25 @@
             type="password"
           />
           <div class="div-block">
-            <div class="div-block-2">
+            <div
+              :class="{active: active === 1}"
+              @click="active === 1 ? active = null : active = 1"
+              class="div-block-2"
+            >
               <div>Я – <br />предприниматель</div>
             </div>
-            <div class="div-block-2">
+            <div
+              :class="{active: active === 2}"
+              @click="active === 2 ? active = null : active = 2"
+              class="div-block-2"
+            >
               <div>Я – <br />стартапер</div>
             </div>
-            <div class="div-block-2">
+            <div
+              :class="{active: active === 3}"
+              @click="active === 3 ? active = null : active = 3"
+              class="div-block-2"
+            >
               <div>Я – <br />инвестор</div>
             </div>
           </div>
@@ -70,16 +82,37 @@
 </template>
 
 <script>
-  import bcrypt from 'bcryptjs';
+  // import bcrypt from 'bcryptjs';
 
   export default {
     head: {
       title: 'Sign up for UStart',
     },
+    data() {
+      return {
+        active: null,
+      };
+    },
     mounted() {
-      bcrypt.hash('password', 12, (err, hash) => {
-        console.log(hash);
-      });
+      // bcrypt.hash('password', 12, (err, hash) => {
+      //   console.log(hash);
+      // });
     },
   };
 </script>
+
+<style scoped>
+  .div-block .div-block-2:hover {
+    background-color: #CCC;
+    cursor: pointer;
+  }
+
+  .div-block .active {
+    background-color: #69b9ff;
+    color: white;
+  }
+
+  .div-block .active:hover {
+    background-color: #69b9ff;
+  }
+</style>
