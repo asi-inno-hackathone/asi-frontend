@@ -72,6 +72,9 @@
           <nuxt-link to="/startups" class="button tab w-inline-block w-tab-link">
             Все стартапы
           </nuxt-link>
+          <nuxt-link to="/grants" class="button tab w-inline-block w-tab-link">
+            Грантовые предложения
+          </nuxt-link>
         </div>
       </div>
     </div>
