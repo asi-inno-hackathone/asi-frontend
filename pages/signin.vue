@@ -57,6 +57,8 @@
 </template>
 
 <script>
+  import bcrypt from 'bcryptjs';
+
   export default {
     head: {
       title: 'Log In',
@@ -69,11 +71,14 @@
     },
     methods: {
       async submit() {
-        console.log(this.email, this.password);
-        // const req = await this.$axios.post('/auth/login');
-        // const data = await this.$axios.$get('/startup/getAll');
-        // console.log('req', req);
-        // console.log('data', data);
+        const pass = await bcrypt.hash(this.password, 12);
+        const data = {
+          email: this.email, password: pass, role: 'investor',
+        };
+        const req = await this.$axios.$post('/auth/login', data, {
+          headers: { 'content-type': 'application/json' },
+        });
+        console.log('req', req);
       },
     },
   };

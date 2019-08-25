@@ -5,7 +5,7 @@
         <h1 class="brand-text"><strong>U</strong>Start</h1>
       </nuxt-link>
       <nav role="navigation" class="navigation-menu w-nav-menu">
-        <nuxt-link to="/signup" class="navigation-link w-nav-link w--current">Войти</nuxt-link>
+        <nuxt-link to="/signin" class="navigation-link w-nav-link w--current">Войти</nuxt-link>
         <nuxt-link to="/contacts" class="navigation-link w-nav-link">Контакты</nuxt-link>
       </nav>
       <div @click="toggleOpened" class="hamburger-button w-nav-button">

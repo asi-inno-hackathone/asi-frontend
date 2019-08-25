@@ -61,6 +61,13 @@
         modal: null,
       };
     },
+    async asyncData({ $axios }) {
+      const all = await $axios.$get('/startup/getAll');
+      return { all };
+    },
+    mounted() {
+      console.log(this.all);
+    },
     methods: {
       toggleDropdown() {
         this.dropdown = !this.dropdown;
