@@ -2,7 +2,7 @@
   <div class="newsheet w-container">
     <div class="div-block-2 mew">
       <img
-        :src="img"
+        :src="'data:image/png;base64,' + logo"
         sizes="250px"
         alt=""
         class="grid-image believe"
@@ -12,10 +12,10 @@
       </div>
     </div>
     <div class="div-block-3 uu">
-      <div class="text-block">{{ title }}</div>
-      <div class="text-block-2"><strong class="bold-text-3">Идея: </strong><span class="text-span-2">{{ idea }}</span></div>
-      <div class="text-block-3"><strong class="bold-text-2">Размер инвестиции: </strong>{{ investment }}<span> млн рублей </span></div>
-      <div class="text-block-3"><strong class="bold-text-2">Дата подачи заявки: </strong>{{ date }}</div>
+      <div class="text-block">{{ name }}</div>
+      <div class="text-block-2"><strong class="bold-text-3">Идея: </strong><span class="text-span-2">{{ description }}</span></div>
+      <div class="text-block-3"><strong class="bold-text-2">Размер инвестиции: </strong>{{ min_money || max_money || '1488' }}<span> рублей </span></div>
+      <div class="text-block-3"><strong class="bold-text-2">Дата подачи заявки: </strong>{{ start_date }}</div>
       <div class="text-block-5"><strong class="bold-text">Формат: </strong>{{ format }}<span class="text-span">‍</span></div>
     </div>
   </div>
@@ -25,12 +25,14 @@
   export default {
     name: 'GrantCard',
     props: {
-      img: String,
+      logo: String,
       link: String,
-      title: String,
-      idea: String,
+      name: String,
+      description: String,
       investment: Number,
-      date: String,
+      max_money: Number,
+      min_money: Number,
+      start_date: String,
       format: String,
     },
   };

@@ -1,8 +1,8 @@
 <template>
   <div :class="{'modal-open': modal}" class="section">
-    <div class="div-block-7">Стартпапы</div>
+    <div class="div-block-7">Стартапы</div>
     <div class="container-2 w-container">
-      <h2 class="heading-2">Найдено 8 стартапов</h2>
+      <h2 class="heading-2">Найдено {{ startups.length }} стартапов</h2>
       <div class="w-dropdown">
         <div @click="toggleDropdown" :class="{'w--open': dropdown}" class="w-dropdown-toggle">
           <div class="w-icon-dropdown-toggle" />
@@ -23,26 +23,24 @@
     </div>
     <div class="container w-container">
       <div
-        v-for="i in 8"
-        :id="i === 1 ? 'w-node-8a436f498659-323401d1' : ''"
-        :key="i"
-        @click="openModal(i)"
+        v-for="(startup, i) in startups"
+        :id="i === 0 ? 'w-node-8a436f498659-323401d1' : ''"
+        :key="startup.id"
+        @click="openModal(startup.id)"
         class="white-box"
       >
         <img
-          src="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61c055ad30d374ad35a474_7e8e172cf31d9e14c1d472ba2be1ac53_XL.jpg"
-          srcset="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61c055ad30d374ad35a474_7e8e172cf31d9e14c1d472ba2be1ac53_XL-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61c055ad30d374ad35a474_7e8e172cf31d9e14c1d472ba2be1ac53_XL.jpg 535w"
+          :src="'data:image/png;base64,' + startup.logo"
           sizes="(max-width: 479px) 25vw, (max-width: 767px) 60px, (max-width: 991px) 50.3125px, 95.5px"
           alt=""
           class="grid-image"
         />
-        <h3>Noom</h3>
-        <h3 class="heading">100 тыс ₽</h3>
-        <p class="paragraph block">Блокчейн</p>
-        <p class="paragraph inz">Инженерия</p>
-        <p class="paragraph _3d">3D моделирование</p>
+        <h3>{{ startup.name }}</h3>
+        <h3 class="heading">{{ parseInt(startup.money_requirement) }} тыс ₽</h3>
+        <p v-for="tag in startup.tags" :key="tag.name" class="paragraph">{{ tag.name }}</p>
       </div>
     </div>
+
     <StartupCard @close="modal = null" />
   </div>
 </template>
@@ -62,18 +60,15 @@
       };
     },
     async asyncData({ $axios }) {
-      const all = await $axios.$get('/startup/getAll');
-      return { all };
-    },
-    mounted() {
-      console.log(this.all);
+      const startups = await $axios.$get('/startup/getAll');
+      return { startups };
     },
     methods: {
       toggleDropdown() {
         this.dropdown = !this.dropdown;
       },
-      openModal(id) {
-        this.modal = id;
+      async openModal(id) {
+        this.modal = await this.$axios.$get('/startup/get/' + id);
       },
     },
   };

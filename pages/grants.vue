@@ -2,7 +2,7 @@
   <div class="section">
     <div class="div-block-7">Гранты</div>
 
-    <GrantCard v-for="grant in grants" :key="grant.title" v-bind="grant" />
+    <GrantCard v-for="grant in grants" :key="grant.name" v-bind="grant" />
 
   </div>
 </template>
@@ -33,6 +33,10 @@
       return {
         grants,
       };
+    },
+    async asyncData({ $axios }) {
+      const grants = await $axios.$get('/investment/getAll');
+      return { grants };
     },
   };
 </script>
