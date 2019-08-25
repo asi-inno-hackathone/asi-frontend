@@ -36,7 +36,7 @@
           class="grid-image"
         />
         <h3>{{ startup.name }}</h3>
-        <h3 class="heading">{{ parseInt(startup.money_requirement) }} тыс ₽</h3>
+        <h3 class="heading">{{ parseInt(startup.money_requirement) }} ₽</h3>
         <p v-for="tag in startup.tags" :key="tag.name" class="paragraph">{{ tag.name }}</p>
       </div>
     </div>
@@ -69,7 +69,6 @@
       },
       async openModal(id) {
         this.modal = await this.$axios.$get('/startup/get/' + id);
-        console.log(this.modal);
       },
     },
   };

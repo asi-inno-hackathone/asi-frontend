@@ -59,8 +59,11 @@
       };
     },
     async asyncData({ $axios }) {
-      const investors = await $axios.$get('/investor/getAll');
+      const investors = await $axios.$get('/investor');
       return { investors };
+    },
+    mounted() {
+      console.log(this.investors);
     },
     methods: {
       toggleDropdown() {
