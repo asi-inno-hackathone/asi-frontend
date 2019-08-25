@@ -1,4 +1,4 @@
-/* Generated on: Sun Aug 25 2019 01:24:24 GMT+0000 (UTC) */
+/* Generated on: Sun Aug 25 2019 07:42:09 GMT+0000 (UTC) */
 /* ==========================================================================
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
    ========================================================================== */
@@ -688,12 +688,30 @@ p {
 }
 
 .div-block-7 {
-  margin-bottom: 2rem;
-  padding-left: 2rem;
-  font-size: 50px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 0rem;
+  font-size: 30px;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
   letter-spacing: 10px;
+}
+
+.div-block-7.top {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+  font-size: 50px;
+  text-align: center;
+}
+
+.div-block-7.under {
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.div-block-7.tt {
+  padding-left: 1rem;
+  letter-spacing: 5px;
 }
 
 .div-block-8 {
@@ -762,6 +780,90 @@ p {
 .image {
   width: 500px;
   height: 500px;
+}
+
+.div-block-9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.text-block-7 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: left;
+}
+
+.text-block-8 {
+  display: block;
+  padding: 1rem 1rem 1rem 3rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  font-weight: 600;
+}
+
+.text-block-8.ff {
+  padding-left: 1rem;
+}
+
+.div-block-10 {
+  display: -ms-grid;
+  display: grid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto minmax(auto, 1fr);
+  grid-template-rows: auto minmax(auto, 1fr);
+}
+
+.text-block-9 {
+  margin-left: 0.5rem;
+  padding: 1rem 3rem 1rem 1rem;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 auto;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
+  background-color: transparent;
+  font-weight: 300;
+}
+
+.image-2 {
+  position: relative;
 }
 
 html.w-mod-js *[data-ix="fade-in-bottom-page-loads"] {
@@ -952,6 +1054,30 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
     -ms-flex-line-pack: justify;
     align-content: space-between;
   }
+}
+
+#w-node-f27e22834ff2-aa3401ce {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: Area-2;
+}
+
+@media (max-width: 479px) {
+  #w-node-f27e22834ff2-aa3401ce {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+}
+
+#w-node-f27e22835043-aa3401ce {
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: 2;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: 2;
 }
 
 #w-node-f27e22834ff2-aa3401ce {
