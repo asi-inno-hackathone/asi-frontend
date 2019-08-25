@@ -20,7 +20,17 @@ export default {
   /*
   ** Load nuxt modules
   */
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+    ['nuxt-env', {
+      keys: [
+        {
+          key: 'API_URL',
+          default: 'http://188.130.155.115',
+        },
+      ],
+    }],
+  ],
 
   css: ['~/static/css/home.css', '~/static/css/styles.css'],
   /*
@@ -35,6 +45,14 @@ export default {
   */
   loading: { color: '#3B8070' },
 
+  axios: {
+    https: false,
+    retry: { retries: 3 },
+  },
+
+  plugins: [
+    '~plugins/axios.js',
+  ],
   /*
   ** Build configuration
   */

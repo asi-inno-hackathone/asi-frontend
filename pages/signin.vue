@@ -6,12 +6,14 @@
       </div>
       <div class="form-wrapper w-form">
         <form
+          @submit.prevent="submit"
           class="form"
           name="wf-form-Email-Form"
         >
           <label class="field-label" for="email">Электронный адрес</label>
           <input
             id="email"
+            v-model="email"
             class="form-field w-input"
             maxlength="256"
             name="Name"
@@ -22,6 +24,7 @@
           <label class="field-label" for="password">Пароль</label>
           <input
             id="password"
+            v-model="password"
             class="form-field w-input"
             maxlength="256"
             name="password"
@@ -57,6 +60,21 @@
   export default {
     head: {
       title: 'Log In',
+    },
+    data() {
+      return {
+        email: '',
+        password: '',
+      };
+    },
+    methods: {
+      async submit() {
+        console.log(this.email, this.password);
+        // const req = await this.$axios.post('/auth/login');
+        // const data = await this.$axios.$get('/startup/getAll');
+        // console.log('req', req);
+        // console.log('data', data);
+      },
     },
   };
 </script>
