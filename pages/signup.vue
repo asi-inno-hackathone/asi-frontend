@@ -112,6 +112,10 @@
     cursor: pointer;
   }
 
+  .div-block-2 {
+    height: auto;
+  }
+
   .div-block .active {
     background-color: #69b9ff;
     color: white;

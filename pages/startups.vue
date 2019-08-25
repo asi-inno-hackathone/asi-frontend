@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <StartupCard @close="modal = null" />
+    <StartupCard @close="modal = null" v-bind="modal" />
   </div>
 </template>
 
@@ -69,6 +69,7 @@
       },
       async openModal(id) {
         this.modal = await this.$axios.$get('/startup/get/' + id);
+        console.log(this.modal);
       },
     },
   };

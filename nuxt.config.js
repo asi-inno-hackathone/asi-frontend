@@ -47,7 +47,6 @@ export default {
 
   axios: {
     https: false,
-    retry: { retries: 3 },
   },
 
   plugins: [

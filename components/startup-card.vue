@@ -4,7 +4,7 @@
       <div @click="$emit('close')" class="close-modal">x</div>
       <div class="div-block-2 mew">
         <img
-          src="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61c1215bf4d83eb723fadc_KMO_120232_18665_1_t218_123704.jpg"
+          :src="'data:image/png;base64,' + logo"
           alt=""
           class="grid-image believe"
         />
@@ -13,17 +13,17 @@
         </div>
       </div>
       <div class="div-block-3 uu">
-        <div class="text-block">NeuraLink</div>
-        <div class="text-block-2"><strong class="bold-text-3">Идея:</strong><span class="text-span-2"> Нейротехнологическая компания, основанная Илоном Маском, планирующая заниматься разработкой и производством имплантируемых нейрокомпьютерных интерфейсов.</span> </div>
-        <div class="text-block-3"><strong class="bold-text-2">Сумма для запуска:</strong> <span>10 млн рублей </span></div>
+        <div class="text-block">{{ name }}</div>
+        <div class="text-block-2"><strong class="bold-text-3">Идея: </strong><span class="text-span-2">{{ description }}</span></div>
+        <div class="text-block-3"><strong class="bold-text-2">Сумма для запуска:</strong> <span>{{ money_requirement }} рублей</span></div>
         <div class="div-block-5">
           <div class="text-block-5"><strong class="bold-text-4">Интересы:</strong></div>
           <p class="paragraph block mrr">Киберпанк</p>
           <p class="paragraph block mrr">Медицина</p>
           <p class="paragraph block mrr">IT</p>
         </div>
-        <div class="text-block-5"><strong class="bold-text">Bio</strong>: <span class="text-span">Оконичил <em class="italic-text">University of Pennsylvani</em>.Успешно запустил PayPal, работает над SpaceX.</span></div>
-        <div class="text-block-6"><span class="text-span-3">Бизнес-план:<br />‍<br /></span>тут типо прикреплённая pdf</div>
+        <div class="text-block-5"><strong class="bold-text">Bio</strong>: <span class="text-span">{{ bio }}</span></div>
+        <div class="text-block-6"><span class="text-span-3">Бизнес-план: </span><a :href="file" target="_blank">PDF-файл</a></div>
       </div>
     </div>
   </div>
@@ -32,6 +32,32 @@
 <script>
   export default {
     name: 'StartupCard',
+    props: {
+      name: {
+        type: String,
+        default: '',
+      },
+      description: {
+        type: String,
+        default: '',
+      },
+      logo: {
+        type: String,
+        default: '',
+      },
+      bio: {
+        type: String,
+        default: '',
+      },
+      file: {
+        type: String,
+        default: '',
+      },
+      money_requirement: {
+        type: Number,
+        default: null,
+      },
+    },
   };
 </script>
 

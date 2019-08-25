@@ -16,7 +16,7 @@
       <div class="text-block-2"><strong class="bold-text-3">Идея: </strong><span class="text-span-2">{{ description }}</span></div>
       <div class="text-block-3"><strong class="bold-text-2">Размер инвестиции: </strong>{{ min_money || max_money || '1488' }}<span> рублей </span></div>
       <div class="text-block-3"><strong class="bold-text-2">Дата подачи заявки: </strong>{{ start_date }}</div>
-      <div class="text-block-5"><strong class="bold-text">Формат: </strong>{{ format }}<span class="text-span">‍</span></div>
+      <div class="text-block-5"><strong class="bold-text">Формат: </strong>{{ type }}<span class="text-span">‍</span></div>
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@
       max_money: Number,
       min_money: Number,
       start_date: String,
-      format: String,
+      type: String,
     },
   };
 </script>

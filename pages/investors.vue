@@ -23,27 +23,24 @@
     </div>
     <div class="container w-container">
       <div
-        v-for="i in 8"
-        :id="i === 1 ? 'w-node-8a436f498659-323401d1' : ''"
-        :key="i"
-        @click="openModal(i)"
+        v-for="(investor, i) in investors"
+        :id="i === 0 ? 'w-node-8a436f498659-323401d1' : ''"
+        :key="investor.id"
+        @click="openModal(investor.id)"
         class="white-box serv"
       >
         <img
-          src="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61609945d89375e9512529_jc7cwptt61bvrkhsww25.png"
-          srcset="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61609945d89375e9512529_jc7cwptt61bvrkhsww25-p-500.png 500w, https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61609945d89375e9512529_jc7cwptt61bvrkhsww25.png 512w"
+          :src="'data:image/png;base64,' + investor.logo"
           sizes="(max-width: 479px) 15vw, (max-width: 767px) 60px, (max-width: 991px) 69px, 95.5px"
           alt=""
           class="grid-image"
         />
-        <h3>Билл Гросс</h3>
-        <h3 class="heading">до 500 тыс ₽</h3>
-        <p class="paragraph block">Блокчейн</p>
-        <p class="paragraph servvs">Сервисы</p>
-        <p class="paragraph anal">Аналитика</p>
+        <h3>{{ investor.name }}</h3>
+        <h3 class="heading">до {{ investor.money }} ₽</h3>
+        <p v-for="tag in investor.tags" :key="tag.id" class="paragraph">{{ tag.name }}</p>
       </div>
     </div>
-    <InvestorCard @close="modal = null" />
+    <InvestorCard @close="modal = null" v-bind="modal" />
   </div>
 </template>
 
@@ -61,12 +58,16 @@
         modal: null,
       };
     },
+    async asyncData({ $axios }) {
+      const investors = await $axios.$get('/investor/getAll');
+      return { investors };
+    },
     methods: {
       toggleDropdown() {
         this.dropdown = !this.dropdown;
       },
-      openModal(id) {
-        this.modal = id;
+      async openModal(id) {
+        this.modal = await this.$axios.$get('/investor/get/' + id);
       },
     },
   };

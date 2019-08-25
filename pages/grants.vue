@@ -1,9 +1,7 @@
 <template>
   <div class="section">
     <div class="div-block-7">Гранты</div>
-
     <GrantCard v-for="grant in grants" :key="grant.name" v-bind="grant" />
-
   </div>
 </template>
 
