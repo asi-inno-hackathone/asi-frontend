@@ -1,4 +1,4 @@
-/* Generated on: Sat Aug 24 2019 22:44:06 GMT+0000 (UTC) */
+/* Generated on: Sat Aug 24 2019 23:19:21 GMT+0000 (UTC) */
 /* ==========================================================================
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
    ========================================================================== */
@@ -641,6 +641,7 @@ p {
 
 .text-span-2 {
   font-size: 20px;
+  letter-spacing: 3px;
 }
 
 .text-span-3 {
@@ -678,8 +679,8 @@ p {
   margin-bottom: 2rem;
   padding-left: 2rem;
   font-size: 45px;
-  font-weight: 300;
-  text-align: left;
+  font-weight: 600;
+  text-align: center;
   letter-spacing: 3px;
 }
 
@@ -740,6 +741,10 @@ p {
   -ms-flex: 1;
   flex: 1;
   text-align: left;
+}
+
+.italic-text {
+  font-style: normal;
 }
 
 html.w-mod-js *[data-ix="fade-in-bottom-page-loads"] {

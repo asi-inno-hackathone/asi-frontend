@@ -335,17 +335,6 @@ p {
   font-size: 16px;
 }
 
-.grid-image {
-  display: block;
-  width: 35%;
-  margin: 20px auto;
-  padding: 20px;
-  border: 10px solid #fff;
-  border-radius: 50%;
-  background-color: #69b9ff;
-  box-shadow: 0 0 0 1px #2e9dff;
-}
-
 .info-icon {
   float: left;
 }

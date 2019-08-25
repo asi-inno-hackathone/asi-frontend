@@ -1,8 +1,8 @@
 <template>
   <div :class="{'modal-open': modal}" class="section">
-    <div class="div-block-7">Инвесторы</div>
+    <div class="div-block-7">Стартпапы</div>
     <div class="container-2 w-container">
-      <h2 class="heading-2">Найдено 8 инвесторов</h2>
+      <h2 class="heading-2">Найдено 8 стартапов</h2>
       <div class="w-dropdown">
         <div @click="toggleDropdown" :class="{'w--open': dropdown}" class="w-dropdown-toggle">
           <div class="w-icon-dropdown-toggle" />
@@ -27,33 +27,33 @@
         :id="i === 1 ? 'w-node-8a436f498659-323401d1' : ''"
         :key="i"
         @click="openModal(i)"
-        class="white-box serv"
+        class="white-box"
       >
         <img
-          src="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61609945d89375e9512529_jc7cwptt61bvrkhsww25.png"
-          srcset="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61609945d89375e9512529_jc7cwptt61bvrkhsww25-p-500.png 500w, https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61609945d89375e9512529_jc7cwptt61bvrkhsww25.png 512w"
-          sizes="(max-width: 479px) 15vw, (max-width: 767px) 60px, (max-width: 991px) 69px, 95.5px"
+          src="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61c055ad30d374ad35a474_7e8e172cf31d9e14c1d472ba2be1ac53_XL.jpg"
+          srcset="https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61c055ad30d374ad35a474_7e8e172cf31d9e14c1d472ba2be1ac53_XL-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5d615c33ad30d3635e3401c8/5d61c055ad30d374ad35a474_7e8e172cf31d9e14c1d472ba2be1ac53_XL.jpg 535w"
+          sizes="(max-width: 479px) 25vw, (max-width: 767px) 60px, (max-width: 991px) 50.3125px, 95.5px"
           alt=""
           class="grid-image"
         />
-        <h3>Билл Гросс</h3>
-        <h3 class="heading">до 500 тыс ₽</h3>
+        <h3>Noom</h3>
+        <h3 class="heading">100 тыс ₽</h3>
         <p class="paragraph block">Блокчейн</p>
-        <p class="paragraph servvs">Сервисы</p>
-        <p class="paragraph anal">Аналитика</p>
+        <p class="paragraph inz">Инженерия</p>
+        <p class="paragraph _3d">3D моделирование</p>
       </div>
     </div>
-    <InvestorCard @close="modal = null" />
+    <StartupCard @close="modal = null" />
   </div>
 </template>
 
 <script>
-  import InvestorCard from "../components/investor-card";
+  import StartupCard from "../components/startup-card";
 
   export default {
-    components: {InvestorCard},
+    components: {StartupCard},
     head: {
-      title: 'Инвесторы',
+      title: 'Стартапы',
     },
     data() {
       return {

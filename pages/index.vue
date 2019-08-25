@@ -55,7 +55,7 @@
                 alt=""
                 class="grid-image"
               />
-              <h3>Уоррен Баффетт</h3>
+              <h3>У.Баффетт</h3>
               <p>
                 Глава Berkshire Hathaway.
                 <br />Активы под управлением: $702,1 млрд
@@ -65,9 +65,14 @@
             </div>
           </div>
         </div>
-        <nuxt-link to="/investors" class="mt-4 button tab w-inline-block w-tab-link">
-          Больше инвесторов
-        </nuxt-link>
+        <div class="w-row mt-4">
+          <nuxt-link to="/investors" class="button tab w-inline-block w-tab-link">
+            Больше инвесторов
+          </nuxt-link>
+          <nuxt-link to="/startups" class="button tab w-inline-block w-tab-link">
+            Все стартапы
+          </nuxt-link>
+        </div>
       </div>
     </div>
     <div class="section accent">
@@ -219,3 +224,9 @@
     },
   };
 </script>
+
+<style scoped>
+  .hero-section.centered {
+    border: none;
+  }
+</style>
