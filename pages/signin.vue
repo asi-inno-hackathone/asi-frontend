@@ -78,7 +78,7 @@
         const req = await this.$axios.$post('/auth/login', data, {
           headers: { 'content-type': 'application/json' },
         });
-        console.log('req', req);
+        if(req.access_token) this.$router.push('/profile');
       },
     },
   };
