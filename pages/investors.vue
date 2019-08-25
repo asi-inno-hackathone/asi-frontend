@@ -2,7 +2,7 @@
   <div :class="{'modal-open': modal}" class="section">
     <div class="div-block-7">Инвесторы</div>
     <div class="container-2 w-container">
-      <h2 class="heading-2">Найдено 8 инвесторов</h2>
+      <h2 class="heading-2">Найдено {{ investors.length }} инвесторов</h2>
       <div class="w-dropdown">
         <div @click="toggleDropdown" :class="{'w--open': dropdown}" class="w-dropdown-toggle">
           <div class="w-icon-dropdown-toggle" />
@@ -25,19 +25,19 @@
       <div
         v-for="(investor, i) in investors"
         :id="i === 0 ? 'w-node-8a436f498659-323401d1' : ''"
-        :key="investor.id"
-        @click="openModal(investor.id)"
+        :key="investor.investor_id"
+        @click="openModal(investor.investor_id)"
         class="white-box serv"
       >
         <img
-          :src="'data:image/png;base64,' + investor.logo"
+          :src="'data:image/png;base64,' + investor.avatar"
           sizes="(max-width: 479px) 15vw, (max-width: 767px) 60px, (max-width: 991px) 69px, 95.5px"
           alt=""
           class="grid-image"
         />
-        <h3>{{ investor.name }}</h3>
-        <h3 class="heading">до {{ investor.money }} ₽</h3>
-        <p v-for="tag in investor.tags" :key="tag.id" class="paragraph">{{ tag.name }}</p>
+        <h3>{{ investor.investor_name }}</h3>
+        <h3 class="heading">до {{ parseInt(investor.max_investment) }} ₽</h3>
+        <p v-for="tag in investor.tags" :key="tag.id" class="paragraph">{{ tag.tag_name }}</p>
       </div>
     </div>
     <InvestorCard @close="modal = null" v-bind="modal" />
@@ -62,15 +62,12 @@
       const investors = await $axios.$get('/investor');
       return { investors };
     },
-    mounted() {
-      console.log(this.investors);
-    },
     methods: {
       toggleDropdown() {
         this.dropdown = !this.dropdown;
       },
       async openModal(id) {
-        this.modal = await this.$axios.$get('/investor/get/' + id);
+        this.modal = await this.$axios.$get('/investor/' + id);
       },
     },
   };
