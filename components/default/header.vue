@@ -37,7 +37,6 @@
     },
     methods: {
       toggleOpened() {
-        console.log('clicked');
         this.opened = !this.opened;
       },
     },
