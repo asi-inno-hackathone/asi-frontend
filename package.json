@@ -20,7 +20,7 @@
     "@nuxtjs/tailwindcss": "1.1.2",
     "bcryptjs": "^2.4.3",
     "cssnano": "4.1.10",
-    "nuxt": "2.8.1",
+    "nuxt": "3.12.4",
     "nuxt-env": "^0.1.0"
   },
   "devDependencies": {
